@@ -1,8 +1,7 @@
 const express = require('express');
+const userHandler = require('../modules/user/apiHandler/apiHandler')
 const router = express.Router();
 
-router.post("/register", (req, res) => {
-    res.send(`nama saya ${req.body.nama}`);
-   });
+router.post('/register',userHandler.register )
 
 module.exports = router;
