@@ -1,0 +1,29 @@
+{
+  "name": "express-with-cqrs",
+  "version": "1.0.0",
+  "description": "express with cqrs",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "http-errors": "^1.8.0",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vcars/express-with-cqrs.git"
+  },
+  "author": "ahmad zulfikar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vcars/express-with-cqrs/issues"
+  },
+  "homepage": "https://github.com/vcars/express-with-cqrs#readme"
+}
