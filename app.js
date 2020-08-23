@@ -1,8 +1,10 @@
 require('dotenv').config();
 const bodyParser = require('body-parser');
-const express = require('express');
 const createError = require('http-errors');
-const indexRouter = require('./src/api/index')
+const logger = require('./src/config/logger')
+const express = require('express');
+const indexRouter = require('./src/api/index');
+
 
 const app = express();
 
@@ -13,7 +15,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // app.use(require("morgan")("dev"));
     app.listen(port , () => {
-    console.log("Express server listning on port " + port);
+  
+    logger.log({
+        level: 'info',
+        message: `Server listening on port ${port}`
+      });
   });
 
    app.use('/', indexRouter);
