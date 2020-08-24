@@ -7,7 +7,7 @@ const register = async (req, res) => {
 
 
 const result =await commandHandler.register(payload);
-console.log(result);
+
   res.json(`${result} Register Succesfully`);
 
 };
