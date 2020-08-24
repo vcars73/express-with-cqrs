@@ -1,12 +1,16 @@
 const express = require('express');
-const userRoutes = require('./user')
+const {pool} = require('../config/db/postgre')
 const router = express.Router();
+const userRoutes = require('./user');
+const logger = require('../config/logger');
+
 
 router.use('/user', userRoutes);
 
   router.get("/", (req, res) => {
-    res.send("hello fikar");
+    res.json("hello fikar");
    });
+
 
 
 module.exports = router

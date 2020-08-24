@@ -1,4 +1,5 @@
 const logger = require('../../../../config/logger')
+
 class User {
 //   constructor(db) {
 //     this.query = new query(db);
