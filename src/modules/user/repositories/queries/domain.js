@@ -1,25 +1,21 @@
-const logger = require('../../../../config/logger')
-const db = require('../../../../config/db/postgre')
+const logger = require('../../../../config/utils/logger')
+const db = require('../../../../config/databases/postgre')
+const comRes = require('../../../../config/utils/commonResponse');
 class User {
 
   async getAllUser() {
 
-
-
     try {
     const result = await db.query('SELECT * FROM public.user');
-    logger.log({
-        level: 'info',
-        message: 'get all user succesfully'
-      });
+    logger.log('info', 'get all user succesfully');
 
-      const resulJson = JSON.stringify(result.rows)
-    return resulJson
+    return comRes.success(200 , result.rows,'Succes Get All User')
+
     } catch (error) {
-        logger.log({
-            level: 'error',
-            message: error
-          });
+      logger.log('error', error);
+
+          console.log(error);
+          return comRes.error(404 , 'Data Not Found')
     }
     
       

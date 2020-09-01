@@ -14,6 +14,20 @@ const register = async (payload) => {
   return result;
 };
 
+const login = async (payload) => {
+
+  const postData = async() => {
+
+    const result = await Domain.login(payload);
+    return result;
+  };
+  const result = await postData();
+  return result;
+};
+
+
+
 module.exports = {
-    register
+    register,
+    login
 };
