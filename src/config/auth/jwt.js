@@ -40,7 +40,8 @@ return jwt.sign(payload, privateKEY, signOptions);
   
     
     if (!token) {
-      return "invalid login"
+      result = comRes.error(401,'Invalid Token')
+      return comRes.response(res , result);
     }
     let verifyOptions = {
         issuer:  'vcars73',
@@ -56,6 +57,7 @@ return jwt.sign(payload, privateKEY, signOptions);
 
       if (err.name == 'TokenExpiredError'){
         result = comRes.error(401,'Token Has Expired!')    
+      
       }
 
       else {
