@@ -26,8 +26,22 @@ const login = async (payload) => {
 };
 
 
+const refreshToken = async (payload) => {
+
+  const postData = async() => {
+
+    const result = await Domain.refreshToken(payload);
+    return result;
+  };
+  const result = await postData();
+  return result;
+};
+
+
+
 
 module.exports = {
     register,
-    login
+    login,
+    refreshToken
 };
