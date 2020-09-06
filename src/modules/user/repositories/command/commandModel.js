@@ -12,8 +12,15 @@ const login =  joi.object({
     password: joi.string().required(),
   });
 
+  const refreshToken =  joi.object({
+    token: joi.string().required()
+  });
+
+
+
 
 module.exports = {
 login,
-register
+register,
+refreshToken
 }

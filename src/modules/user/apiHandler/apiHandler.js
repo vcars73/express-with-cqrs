@@ -31,8 +31,7 @@ const result =await queryHandler.getAllUser();
 
 
 const login = async (req, res) => {
-  const { body } = req;
-  const payload =  body
+  const payload =  req.body
 
 
 const validation = commandModel.login.validate(payload)
@@ -43,9 +42,25 @@ if (validation.error) {
   return comRes.response(res,notValid);
 }
 
-
-
 const result =await commandHandler.login(payload);
+
+  return comRes.response(res,result);
+
+};
+
+const refreshToken = async (req, res) => {
+  const payload =  req.body
+
+
+const validation = commandModel.refreshToken.validate(payload)
+
+
+if (validation.error) {
+  const notValid = comRes.error(409,validation.error.details[0].message)
+  return comRes.response(res,notValid);
+}
+
+const result =await commandHandler.refreshToken(payload);
 
   return comRes.response(res,result);
 
@@ -57,5 +72,6 @@ const result =await commandHandler.login(payload);
 module.exports = {
     register,
     getAlUser,
-    login
+    login,
+    refreshToken
 };
