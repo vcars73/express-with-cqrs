@@ -67,8 +67,6 @@ const result =await commandHandler.refreshToken(payload);
 };
 
 
-
-
 module.exports = {
     register,
     getAlUser,
