@@ -4,13 +4,15 @@ const createError = require('http-errors');
 const logger = require('./src/config/utils/logger')
 const express = require('express');
 const indexRouter = require('./src/api/index');
-
+const cors = require('cors');
 
 const app = express();
+
 
 const port = process.env.PORT ? process.env.PORT : 3000 
 
 
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // app.use(require("morgan")("dev"));
