@@ -9,7 +9,7 @@ class movies {
     let filterDate = '';
     let both = '';
     if(payload.search&&payload.startDate&&payload.endDate) {
-both = `WHERE title ILIKE '%${payload.search}%' AND "showTime" BETWEEN '${payload.startDate}' AND '${payload.endDate}' ORDER BY "showTime" ASC`
+both = `WHERE title ILIKE '${payload.search}%' AND "showTime" BETWEEN '${payload.startDate}' AND '${payload.endDate}' ORDER BY "showTime" ASC`
     }
     else {
         search = payload.search ? `WHERE title ILIKE '%${payload.search}%'` : '';
