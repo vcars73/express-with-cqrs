@@ -1,9 +1,9 @@
 const joi = require('joi')
 
 const listMovies =  joi.object({
-    search: joi.string().optional(),
-    startDate: joi.string().optional(),
-    endDate: joi.string().optional(),
+    search: joi.string().optional().allow(''),
+    startDate: joi.string().optional().allow(''),
+    endDate: joi.string().optional().allow(''),
   });
 
 module.exports = {
